@@ -1,13 +1,12 @@
 <?php
-include("./checkDBExist.php");
-include("./connect.php");
-include("./setUpDatabase.php");
-include("./CreateDatabase.php");
-include("./CreateUserForm.php");
+include "./checkDBExist.php";
+include "./setUpDatabase.php";
+include "./CreateDatabase.php";
+include "./CreateUserForm.php";
+include "config.php";
 function main()
 {
-    $conn = connect();
-    $dbName = "website123";
+    global $conn, $dbName;
     if (checkDBExist($conn, $dbName)) {
         echo ("db exist");
     } else {
